@@ -25,7 +25,8 @@ function M.format()
 
   local job = Job:new {
     command = M.config.command,
-    args = { "--style", style, vim.api.nvim_buf_get_name(0) },
+    -- args = { "--style", style, vim.api.nvim_buf_get_name(0) },
+    args = { vim.api.nvim_buf_get_name(0) },
   }
   local output = job:sync()
 
